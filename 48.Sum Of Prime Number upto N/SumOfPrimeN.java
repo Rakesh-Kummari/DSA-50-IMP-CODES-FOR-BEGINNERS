@@ -1,0 +1,35 @@
+import java.util.*;
+
+public class SumOfPrimeN {
+
+    public static boolean PrimeN(int n) {
+        if (n <= 1) {
+            return false;
+        }
+
+        for (int i = 2; i < n; i++) {
+            if (n % i == 0) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    public static void main(String args[]) {
+        Scanner sc = new Scanner(System.in);
+
+        int n = sc.nextInt();
+        int sum = 0;
+
+        for (int i = 2; i < n; i++) {
+            if (PrimeN(i)) {
+                System.out.print(i + " ");
+                sum += i;
+            }
+        }
+        System.out.println();
+
+        System.out.println(sum);
+    }
+}
